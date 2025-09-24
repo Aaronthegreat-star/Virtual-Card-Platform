@@ -24,10 +24,7 @@ cd Virtual-Card-Platform
 
 ### 2. Build and Start Services
 ```bash
-# Option 1: Build and start in one command 
-docker-compose up -d --build
-
-# Option 2: Separate build and start
+# Build and start in one command 
 docker-compose build
 docker-compose up -d
 
