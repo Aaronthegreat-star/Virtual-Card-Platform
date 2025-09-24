@@ -1,0 +1,30 @@
+node_modules
+vendor
+.git
+.gitignore
+Dockerfile
+.dockerignore
+.gitattributes
+package.json
+package-lock.json
+
+# Laravel caches & logs
+/storage/*.key
+/storage/*.log
+/storage/framework/*
+/storage/logs/*
+/storage/debugbar/*
+/bootstrap/cache/*.php
+
+# Environment files
+.env
+.env.*.local
+
+# Composer cache
+/vendor
+
+# OS / editor files
+*.DS_Store
+*.swp
+.idea
+.vscode

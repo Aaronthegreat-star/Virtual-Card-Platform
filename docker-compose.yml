@@ -1,0 +1,44 @@
+services:
+  server:
+    build: 
+      context: .
+      dockerfile: ./server-api/Dockerfile
+    container_name: laravel_api
+    expose:
+      - "9000"
+    volumes:
+      - ./server-api:/var/www/html
+      - /var/www/html/vendor #keep vendor folder in container
+    networks:
+      - laravel
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: nginx_server
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro 
+      - ./server-api:/var/www/html
+    depends_on:
+      - server
+      - websocket
+    networks:
+      - laravel
+
+  websocket:
+    build: 
+      context: .
+      dockerfile: ./websocket/Dockerfile
+    container_name: websocket_server
+    networks:
+      - laravel
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./websocket:/app
+
+networks:
+  laravel:
+    driver: bridge
+    

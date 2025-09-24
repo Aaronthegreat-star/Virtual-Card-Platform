@@ -7,8 +7,8 @@ const io = require("socket.io")(httpServer, {
         credentials: true
     }
 })
-httpServer.listen(8080, () => {
-    console.log('listening on *:8080')
+httpServer.listen(8081, () => {
+    console.log('listening on *:8081')
 })
 io.on('connection', (socket) => {
     socket.on('newTransaction', (params) => {
