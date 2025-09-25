@@ -13,13 +13,13 @@ services:
       - laravel
 
   nginx:
-    image: nginx:1.27-alpine
+    image: nginx:1.28-alpine-slim
     container_name: nginx_server
     ports:
       - "80:80"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro 
-      - ./server-api:/var/www/html
+      - ./server-api:/usr/src/app
     depends_on:
       - server
       - websocket
