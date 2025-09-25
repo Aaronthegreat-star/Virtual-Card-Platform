@@ -12,7 +12,7 @@ COPY websocket/package*.json ./
 
 RUN npm ci --omit=dev && npm cache clean --force
 
-COPY websocket/ /app/
+COPY websocket/ /app/ 
 
 
 FROM node:lts-alpine AS runtime
