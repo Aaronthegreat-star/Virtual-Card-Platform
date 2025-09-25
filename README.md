@@ -50,8 +50,8 @@ docker-compose ps
 
 | Service | Image | Exposed Port | Internal Port |
 |---------|-------|--------------|---------------|
-| Laravel API | Custom PHP 8.2-fpm | - | 9000 |
-| WebSocket | Custom Node.js | 80 | 8080 |
+| Laravel API | Custom PHP 8.2-fpm | 80 | 9000 |
+| WebSocket | Custom Node.js | 8081 | 8080 |
 | Nginx Proxy | nginx:1.27-alpine | 80 | 80 |
 
 ## Docker Compose Configuration
