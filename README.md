@@ -86,9 +86,10 @@ services:
 ## Management Commands
 ```bash
 # build services
+docker-compose build
 
 # Start services
-docker-compose up -d
+docker-compose up
 
 # Stop services  
 docker-compose down
