@@ -1,4 +1,4 @@
-FROM node:lts-alpine AS builder
+FROM node:24.13.0-alpine3.23 AS builder
 WORKDIR /app
 
 
@@ -15,7 +15,7 @@ RUN npm ci --omit=dev && npm cache clean --force
 COPY websocket/ /app/ 
 
 
-FROM node:lts-alpine AS runtime
+FROM node:24.13.0-alpine3.23 AS runtime
 WORKDIR /app
 
 
